@@ -101,7 +101,7 @@ class Website extends VoteAppModel
                 break;
             case 'TOPMINECRAFT-CLICK':
                 // Check with API
-                $result = @file_get_contents("https://topminecraft.click/api/vote/v1/{$website['data']['server_id']}/$ip");
+                $result = @file_get_contents("https://api.topminecraft.click/vote/v1/{$website['data']['server_id']}/$ip");
                 if ($result && ($result = json_decode($result, true))) {
                     if (intval($result['has_vote']) == true)
                         return true;
